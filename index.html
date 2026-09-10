@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>છોટાઉદેપુર નગરપાલિકા - નાગરિક સેવા પોર્ટલ</title>
     <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -27,65 +26,19 @@
     <header class="main-header">
         <div class="container header-flex">
             <div class="logo-section">
-                <div class="emblem">
-                    <!-- Placeholder for Govt Emblem / Logo -->
-                    <i class="fas fa-landmark"></i>
-                </div>
+                <div class="emblem"><i class="fas fa-landmark"></i></div>
                 <div class="portal-title">
                     <h1>છોટાઉદેપુર નગરપાલિકા</h1>
                     <p>ગુજરાત સરકાર - નાગરિક કેન્દ્રિત સેવાઓ</p>
                 </div>
             </div>
             <div class="header-banner-right">
-                <div class="digital-india">
-                    <i class="fas fa-digital-tachograph"></i> Digital Chhotaudepur
-                </div>
+                <div class="digital-india"><i class="fas fa-digital-tachograph"></i> Digital Chhotaudepur</div>
             </div>
         </div>
     </header>
 
-    <!-- Navigation Menu -->
-    <nav class="navbar">
-        <div class="container">
-            <ul class="nav-links">
-                <li><a href="#" class="active"><i class="fas fa-home"></i> હોમ</a></li>
-                <li><a href="#">નગરપાલિકા વિશે</a></li>
-                <li><a href="#">સેવાઓ</a></li>
-                <li><a href="#">વેરા અને બિલ</a></li>
-                <li><a href="#">ફરિયાદ નિવારણ</a></li>
-                <li><a href="#">માહિતી અને ટેન્ડર</a></li>
-                <li><a href="#">સંપર્ક</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section / Slider Area -->
-    <section class="hero-section">
-        <div class="container hero-flex">
-            <div class="hero-text">
-                <h2>નાગરિકોની સેવામાં સદૈવ તત્પર</h2>
-                <p>તમારા ઘર બેઠા પ્રોપર્ટી ટેક્સ ભરો, પાણી વેરો ચૂકવો અને નાગરિક સેવાઓનો લાભ મેળવો.</p>
-                <a href="#services" class="btn-primary">સેવાઓ જુઓ <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="quick-login-card">
-                <h3><i class="fas fa-user-circle"></i> નાગરિક લોગિન / નોંધણી</h3>
-                <form>
-                    <div class="form-group">
-                        <label>મોબાઈલ નંબર / યુઝરનેમ</label>
-                        <input type="text" placeholder="તમારો મોબાઈલ નંબર દાખલ કરો">
-                    </div>
-                    <div class="form-group">
-                        <label>પાસવર્ડ</label>
-                        <input type="password" placeholder="પાસવર્ડ દાખલ કરો">
-                    </div>
-                    <button type="submit" class="btn-submit">લોગિન કરો</button>
-                    <p class="form-footer-text">ખાતું નથી? <a href="#">નવી નોંધણી કરો</a></p>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Citizen Services Quick Grid -->
+    <!-- Services Grid -->
     <section id="services" class="services-section">
         <div class="container">
             <div class="section-title">
@@ -93,59 +46,158 @@
                 <p>ઝડપી અને પારદર્શક ઓનલાઇન સેવાઓ</p>
             </div>
             <div class="services-grid">
+                <!-- Service 1 -->
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-home"></i></div>
                     <h3>પ્રોપર્ટી ટેક્સ</h3>
                     <p>તમારી મિલકત વેરો તપાસો અને ઓનલાઇન ચૂકવણી કરો.</p>
-                    <a href="#" class="service-link">ચૂકવણી કરો &raquo;</a>
+                    <button class="btn-primary" onclick="openModal('propertyModal')">ચૂકવણી કરો &raquo;</button>
                 </div>
+                <!-- Service 2 -->
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-tint"></i></div>
                     <h3>પાણી વેરો / કનેક્શન</h3>
                     <p>પાણી વેરાની વિગતો મેળવો અને બિલ ભરો.</p>
-                    <a href="#" class="service-link">વિગતો જુઓ &raquo;</a>
+                    <button class="btn-primary" onclick="openModal('waterModal')">વિગતો જુઓ &raquo;</button>
                 </div>
+                <!-- Service 3 -->
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
                     <h3>ફરિયાદ નોંધણી</h3>
                     <p>સફાઈ, લાઈટ કે પાણી સંબંધિત ફરિયાદ નોંધાવો.</p>
-                    <a href="#" class="service-link">ફરિયાદ કરો &raquo;</a>
+                    <button class="btn-primary" onclick="openModal('complaintModal')">ફરિયાદ કરો &raquo;</button>
                 </div>
+                <!-- Service 4 -->
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-file-alt"></i></div>
                     <h3>સર્ટિફિકેટ સેવાઓ</h3>
                     <p>જન્મ, મરણ કે અન્ય લગત પ્રમાણપત્રો માટે અરજી.</p>
-                    <a href="#" class="service-link">અરજી કરો &raquo;</a>
+                    <button class="btn-primary" onclick="openModal('certModal')">અરજી કરો &raquo;</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container footer-flex">
-            <div class="footer-col">
-                <h3>છોટાઉદેપુર નગરપાલિકા</h3>
-                <p>મુખ્ય રોડ, છોટાઉદેપુર, ગુજરાત - 391165</p>
-                <p>ફોન: 02669-2320XX</p>
-            </div>
-            <div class="footer-col">
-                <h3>મહત્વની લિંક્સ</h3>
-                <ul>
-                    <li><a href="#">ગુજરાત સરકાર</a></li>
-                    <li><a href="#">શહેરી વિકાસ વિભાગ</a></li>
-                    <li><a href="#">RTI માહિતી</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>સહાયતા</h3>
-                <p>ટેકનિકલ સહાયતા માટે ઈમેલ કરો અથવા ઓફિસ સમય દરમિયાન સંપર્ક કરો.</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 છોટાઉદેપુર નગરપાલિકા. સર્વાધિકાર સુરક્ષિત.</p>
-        </div>
-    </footer>
+    <!-- ================= MODALS (POPUPS) ================= -->
 
+    <!-- 1. Property Tax Modal -->
+    <div id="propertyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('propertyModal')">&times;</span>
+            <h2><i class="fas fa-home"></i> પ્રોપર્ટી ટેક્સ ચૂકવણી</h2>
+            <p class="modal-subtitle">તમારો મિલકત વેરો ઓનલાઈન ભરવા માટે નીચે વિગતો આપો.</p>
+            <form>
+                <div class="form-group">
+                    <label>વોર્ડ નંબર પસંદ કરો:</label>
+                    <select>
+                        <option>-- વોર્ડ પસંદ કરો --</option>
+                        <option>વોર્ડ ૧</option>
+                        <option>વોર્ડ ૨</option>
+                        <option>વોર્ડ ૩</option>
+                        <option>વોર્ડ ૪</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>ટેનામેન્ટ નંબર (Tenement Number):</label>
+                    <input type="text" placeholder="દા.ત. 123456789">
+                </div>
+                <button type="button" class="btn-submit">વેરાની રકમ જુઓ</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 2. Water Tax Modal -->
+    <div id="waterModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('waterModal')">&times;</span>
+            <h2><i class="fas fa-tint"></i> પાણી વેરો અને બિલ</h2>
+            <form>
+                <div class="form-group">
+                    <label>કન્ઝ્યુમર નંબર (Consumer No.):</label>
+                    <input type="text" placeholder="તમારો પાણી બિલ નંબર દાખલ કરો">
+                </div>
+                <div class="form-group">
+                    <label>માલિકનું નામ:</label>
+                    <input type="text" placeholder="રજીસ્ટર્ડ નામ દાખલ કરો">
+                </div>
+                <button type="button" class="btn-submit">બિલ શોધો</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 3. Grievance Modal -->
+    <div id="complaintModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('complaintModal')">&times;</span>
+            <h2><i class="fas fa-bullhorn"></i> ઓનલાઈન ફરિયાદ નોંધણી</h2>
+            <form>
+                <div class="form-group">
+                    <label>અરજદારનું નામ:</label>
+                    <input type="text" placeholder="તમારું પૂરું નામ">
+                </div>
+                <div class="form-group">
+                    <label>મોબાઈલ નંબર:</label>
+                    <input type="tel" placeholder="10 આંકડાનો નંબર">
+                </div>
+                <div class="form-group">
+                    <label>ફરિયાદનો પ્રકાર:</label>
+                    <select>
+                        <option>ડ્રેનેજ / ગટર લાઈન</option>
+                        <option>સ્ટ્રીટ લાઈટ</option>
+                        <option>પીવાનું પાણી</option>
+                        <option>સોલિડ વેસ્ટ / સફાઈ</option>
+                        <option>રખડતા ઢોર</option>
+                        <option>અન્ય વહીવટી</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>ફરિયાદની વિગત:</label>
+                    <textarea rows="3" placeholder="ફરિયાદનું ટૂંકમાં વર્ણન કરો..."></textarea>
+                </div>
+                <button type="button" class="btn-submit">ફરિયાદ નોંધાવો</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 4. Certificate Modal -->
+    <div id="certModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('certModal')">&times;</span>
+            <h2><i class="fas fa-file-alt"></i> સર્ટિફિકેટ અને દાખલા</h2>
+            <p class="modal-subtitle">પ્રમાણપત્રનો પ્રકાર પસંદ કરો:</p>
+            <form>
+                <div class="radio-group">
+                    <label><input type="radio" name="certType"> જન્મ પ્રમાણપત્ર (Birth)</label><br>
+                    <label><input type="radio" name="certType"> મરણ પ્રમાણપત્ર (Death)</label><br>
+                    <label><input type="radio" name="certType"> લગ્ન નોંધણી (Marriage)</label>
+                </div>
+                <div class="form-group" style="margin-top: 15px;">
+                    <label>રજીસ્ટ્રેશન નંબર / વર્ષ:</label>
+                    <input type="text" placeholder="દા.ત. 2024/1234">
+                </div>
+                <button type="button" class="btn-submit">સર્ચ કરો અને ડાઉનલોડ કરો</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript for Modals -->
+    <script>
+        // પોપઅપ ખોલવા માટેનું ફંક્શન
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        // પોપઅપ બંધ કરવા માટેનું ફંક્શન
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // જો યુઝર પોપઅપની બહાર ક્લિક કરે તો પણ બંધ થાય
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
