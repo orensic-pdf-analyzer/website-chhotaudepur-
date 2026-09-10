@@ -1,85 +1,379 @@
-/* =========================================
-   Modal / Popup Styles
-========================================= */
-.modal {
-    display: none; /* મૂળભૂત રીતે છુપાયેલું રહેશે */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* પાછળનો ભાગ બ્લેર/ડાર્ક કરવા */
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-    backdrop-filter: blur(3px);
+/* ==========================================
+   VMC Standard Professional CSS Theme
+========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-.modal-content {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
+body {
+    background-color: #f7f9fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
     width: 90%;
-    max-width: 450px;
-    position: relative;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    animation: slideDown 0.3s ease-out;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-@keyframes slideDown {
-    from { transform: translateY(-30px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+/* 1. Top Utility Bar */
+.top-utility-bar {
+    background-color: #0b3c5d;
+    color: #fff;
+    font-size: 12px;
+    padding: 6px 0;
 }
 
-.modal-content h2 {
-    color: #003366;
-    margin-bottom: 10px;
-    font-size: 22px;
-    border-bottom: 2px solid #ff9933;
-    padding-bottom: 10px;
+.utility-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.modal-subtitle {
-    font-size: 13px;
+.utility-left a, .utility-right a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.utility-right a:hover {
+    text-decoration: underline;
+}
+
+.lang-switch a.active {
+    font-weight: bold;
+    color: #f39c12;
+}
+
+/* 2. Main Header */
+.site-header {
+    background: #ffffff;
+    padding: 15px 0;
+    border-bottom: 4px solid #f39c12;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.emblem-img {
+    font-size: 45px;
+    color: #0b3c5d;
+    background: #eef2f7;
+    padding: 10px 15px;
+    border-radius: 6px;
+}
+
+.brand-titles h2 {
+    font-size: 24px;
+    color: #0b3c5d;
+    font-weight: 700;
+}
+
+.brand-titles p {
+    font-size: 12px;
     color: #666;
-    margin-bottom: 20px;
 }
 
-.close-btn {
-    position: absolute;
-    top: 15px;
-    right: 20px;
+.right-emblem {
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
+    color: #0b3c5d;
+}
+
+.right-emblem i {
     font-size: 28px;
-    color: #aaa;
-    cursor: pointer;
+    display: block;
+}
+
+/* 3. Navigation Bar */
+.main-nav {
+    background-color: #1d2731;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav-menu li a {
+    display: block;
+    color: #fff;
+    padding: 12px 18px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.nav-menu li a:hover, .nav-menu li a.active {
+    background-color: #f39c12;
+    color: #fff;
+}
+
+/* 4. Ticker Bar */
+.ticker-bar {
+    background-color: #eef2f7;
+    border-bottom: 1px solid #dcdcdc;
+    padding: 8px 0;
+}
+
+.ticker-flex {
+    display: flex;
+    align-items: center;
+}
+
+.ticker-title {
+    background-color: #d9534f;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 3px;
+    white-space: nowrap;
+    margin-right: 15px;
+}
+
+.ticker-content {
+    flex-grow: 1;
+    font-size: 13px;
+    color: #333;
+    overflow: hidden;
+}
+
+/* 5. Hero Banner & Quick Links Section */
+.hero-banner-section {
+    padding: 30px 0;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.slider-image-placeholder {
+    background: linear-gradient(rgba(11, 60, 93, 0.7), rgba(11, 60, 93, 0.7)), url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80') no-repeat center center/cover;
+    height: 320px;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-end;
+    padding: 25px;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.slider-caption h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.slider-caption p {
+    font-size: 13px;
+    color: #ddd;
+}
+
+.quick-services-box {
+    background: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.quick-services-box h3 {
+    font-size: 16px;
+    color: #0b3c5d;
+    border-bottom: 2px solid #f39c12;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.quick-services-box ul {
+    list-style: none;
+}
+
+.quick-services-box ul li {
+    margin-bottom: 12px;
+}
+
+.quick-services-box ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     transition: color 0.2s;
 }
 
-.close-btn:hover {
-    color: #ff0000;
+.quick-services-box ul li a i {
+    color: #f39c12;
 }
 
-.modal-content select, 
-.modal-content textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-family: inherit;
+.quick-services-box ul li a:hover {
+    color: #0b3c5d;
+    font-weight: 600;
 }
 
-.radio-group label {
-    font-size: 14px;
-    color: #333;
-    cursor: pointer;
-    display: inline-block;
+/* 6. Core Services Portal Grid */
+.services-portal-section {
+    padding: 40px 0;
+    background: #ffffff;
+    border-top: 1px solid #e1e8ed;
+}
+
+.section-header-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-header-title h2 {
+    font-size: 26px;
+    color: #0b3c5d;
+}
+
+.title-underline {
+    width: 60px;
+    height: 3px;
+    background-color: #f39c12;
+    margin: 8px auto 0 auto;
+}
+
+.portal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+.portal-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.portal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    background: #fff;
+    border-color: #f39c12;
+}
+
+.p-icon {
+    font-size: 35px;
+    color: #f39c12;
+    margin-bottom: 15px;
+}
+
+.portal-card h4 {
+    color: #0b3c5d;
+    font-size: 18px;
     margin-bottom: 8px;
 }
 
-.service-card .btn-primary {
-    border: none;
-    cursor: pointer;
-    display: inline-block;
-    margin-top: 10px;
-    width: 100%;
+.portal-card p {
+    font-size: 13px;
+    color: #666;
+}
+
+/* 7. Professional Footer */
+.vmc-footer {
+    background-color: #121c24;
+    color: #fff;
+    padding: 50px 0 20px 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-widget h4 {
+    font-size: 16px;
+    color: #f39c12;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #2c3e50;
+    padding-bottom: 8px;
+}
+
+.footer-widget p, .footer-widget ul li a {
+    font-size: 13px;
+    color: #b0c4de;
+    text-decoration: none;
+    line-height: 1.8;
+}
+
+.footer-widget ul {
+    list-style: none;
+}
+
+.footer-widget ul li a:hover {
+    color: #fff;
+}
+
+.social-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.social-links a {
+    background: #22303c;
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.social-links a:hover {
+    background: #f39c12;
+}
+
+.footer-bottom-bar {
+    border-top: 1px solid #22303c;
+    padding-top: 20px;
+    font-size: 12px;
+    color: #8899a6;
+}
+
+.bottom-bar-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+    .utility-flex, .bottom-bar-flex {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
 }
